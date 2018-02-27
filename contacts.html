@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Contact Cards</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/Javascript">
+        $(document).ready(function(){
+           $('#submit').click(function(){
+            $('#contacts').append('<h2>'+$('input[name="first_name"]').val()+('  ')+$('input[name="last_name"]').val())+'</h2>';
+             return false;
+           });
+           $(document).on('click','#contacts', function(){
+            $(this).append('<p>'+$('input[name="Description"]').val()+'</p>');
+           });
+		});
+    </script>
+    <style>
+h1{
+    border-bottom: 1px solid black;
+    width:330px;
+} 
+h2{
+    display: block;
+}
+     
+form{
+    width:300px;
+    margin-left:50px;
+    
+}
+#description{
+    Width:300px;
+    Height:100px;
+}
+label{
+    padding:2px;
+    display: inline-table;
+}
+input{
+    margin-left:2px;
+}
+#submit{
+    margin-top:50px;
+    Margin-left:200px;
+}
+#contacts{
+    Width:300px;
+    border: 1px solid black;
+}
+    </style>
+</head>
+<body>
+  <div id="wrapper">
+         <h1>My Contacts</h1>
+         <form>
+             <label>First Name:</label>
+             <input type="text" value="First Name" name="first_name">
+             <label>Last Name:</label> 
+             <input type="text" value="Last Name" name="last_name">
+             <label>Description:</label>
+             <input type="text" id="description" value="Enter Description" name="Description">
+             <input id="submit" type="submit" value="Add Contact">       
+         </form>  
+         <h1>My Contact List</h1>
+     <div id="contacts">
+     </div>    
+   
+  </div>
+</body>
+</html>
